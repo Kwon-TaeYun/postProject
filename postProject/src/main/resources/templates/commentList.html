@@ -22,7 +22,7 @@
         <td th:text="${comment.author}"></td>
         <td th:text="${comment.content}"></td>
         <td th:text="${comment.createdAt}"></td>
-        <td><a th:href="@{/comment/delete(id=${comment.id})}">수정</a></td>
+        <td><a th:href="@{/comment/edit(id=${comment.id})}">수정</a></td>
         <td><a th:href="@{/comment/delete(id=${comment.id})}">삭제</a></td>
     </tr>
     </tbody>
