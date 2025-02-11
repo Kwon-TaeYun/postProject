@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/post.css}">
+    <title>상세 정보</title>
+</head>
+<body>
+<h2 th:text="${board.title}"></h2>
+<div>
+    <strong>이름:</strong><p th:text="${board.name}"></p>
+    <strong>내용:</strong> <p th:text="${board.content}"></p>
+    <strong>작성 일자:</strong> <p th:text="${board.createdAt}"></p>
+</div>
+<a th:href="@{/boards/list}">홈으로</a>
+<a th:href="@{/boards/comment(id=${board.id})}">댓글 달기</a>
+<a th:href="@{/boards/edit(id=${board.id})}">수정</a>
+<a th:href="@{/boards/delete(id=${board.id})}">삭제</a>
+
+</body>
+</html>

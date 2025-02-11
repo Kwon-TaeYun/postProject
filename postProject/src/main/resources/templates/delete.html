@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board 삭제 폼</title>
+</head>
+<body>
+<form th:object="${board}" th:action="@{/boards/delete(id=${board.id})}" method="post" >
+<h1>Board 삭제하기</h1>
+
+    <strong>비밀 번호 입력(인증):</strong><br/>
+    <input type="password" id="password" name="password"/>
+    <p th:if="${error}" style="color: red;" th:text="${error}"></p>
+    <input type="hidden" th:value="${board.id}" name="id" />
+    <br/><br/>
+<button type="submit">삭제하기</button>
+</form>
+</body>
+</html>
